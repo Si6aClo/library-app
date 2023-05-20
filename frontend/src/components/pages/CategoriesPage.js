@@ -11,7 +11,7 @@ const CategoriesPage = () => {
 
     const loadCategories = () => {
         // make a GET request to the 127.0.0.1:8080/api/v1/categories/get_categories endpoint
-        fetch("http://127.0.0.1:8080/api/v1/categories/get_categories", {
+        fetch("http://0.0.0.0:5000/api/v1/categories/get_categories", {
             method: 'GET'
         })
             .then(response => {
@@ -28,7 +28,7 @@ const CategoriesPage = () => {
 
     const sendEmail = () => {
         // make a GET request to the 127.0.0.1:8080/api/v1/email_send/send endpoint
-        fetch("http://127.0.0.1:8080/api/v1/email_send/send", {
+        fetch("http://0.0.0.0:5000/api/v1/email_send/send", {
             method: 'POST'
         })
             .then(response => {

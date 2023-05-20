@@ -7,7 +7,7 @@ const CategoryForm = ({ loadCategories }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch("http://127.0.0.1:8080/api/v1/categories/insert_category", {
+        fetch("http://0.0.0.0:5000/api/v1/categories/insert_category", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

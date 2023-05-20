@@ -22,7 +22,7 @@ const SingleBookPage = () => {
     const loadBook = () => {
         // make a GET request to the "http://127.0.0.1:8080/api/v1/books/get_book/${bookId}"
         // endpoint and set the book state to the response
-        fetch(`http://127.0.0.1:8080/api/v1/books/get_book/${bookId}`, {
+        fetch(`http://0.0.0.0:5000/api/v1/books/get_book/${bookId}`, {
             method: 'GET'
         })
             .then(response => {
@@ -45,7 +45,7 @@ const SingleBookPage = () => {
         e.preventDefault();
         // make a PUT request to the `http://127.0.0.1:8080/api/v1/books/update_book/${bookId}`
         // endpoint with the data from the form
-        fetch(`http://127.0.0.1:8080/api/v1/books/update_book/${bookId}`, {
+        fetch(`http://0.0.0.0:5000/api/v1/books/update_book/${bookId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -73,7 +73,7 @@ const SingleBookPage = () => {
     const loadCategories = () => {
         // make a GET request to the "http://127.0.0.1:8080/api/v1/categories/get_categories"
         // endpoint and set the categories state to the response
-        fetch("http://127.0.0.1:8080/api/v1/categories/get_categories", {
+        fetch("http://0.0.0.0:5000/api/v1/categories/get_categories", {
             method: 'GET'
         })
             .then(response => {

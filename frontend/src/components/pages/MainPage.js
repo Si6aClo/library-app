@@ -12,7 +12,7 @@ const MainPage = () => {
 
     const loadBooks = () => {
         // make a GET request to the 127.0.0.1:8080/api/v1/books/get_all_books endpoint
-        fetch('http://127.0.0.1:8080/api/v1/books/get_all_books', {
+        fetch('http://0.0.0.0:5000/api/v1/books/get_all_books', {
             method: 'GET'
         })
             .then(response => {
