@@ -1,0 +1,80 @@
+
+.update-title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.book-update-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.book-update-form input {
+    width: 300px;
+    height: 30px;
+    padding-left: 10px;
+    border: 1px solid #282c34;
+    border-radius: 5px;
+}
+
+.book-update-form button {
+    width: 100px;
+    height: 30px;
+    border: 1px solid #282c34;
+    border-radius: 5px;
+    background-color: #282c34;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.book-update-form button:hover {
+    background-color: #c90017;
+    color: black;
+}
+
+.book-update-form__field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.book-update-form__field label {
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+#update-message {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #c90017;
+}
+
+#count {
+    width: 100px;
+    height: 30px;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: 0;
+}
+#minus {
+    height: 30px;
+    width: 30px;
+    border: 1px solid #282c34;
+    border-radius: 5px 0 0 5px;
+}
+
+#plus {
+    height: 30px;
+    width: 30px;
+    border: 1px solid #282c34;
+    border-radius: 0 5px 5px 0;
+}

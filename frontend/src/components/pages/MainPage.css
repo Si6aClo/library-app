@@ -1,0 +1,10 @@
+.main-page{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-page__title{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
