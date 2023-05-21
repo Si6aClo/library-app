@@ -3,6 +3,7 @@
 
 import React, { useEffect, useState } from 'react';
 import './BookForm.css';
+import { useEnv } from '../../hooks/env.hook';
 
 const BookForm = ({loadBooks}) => {
     const [title, setTitle] = useState('');
@@ -12,6 +13,7 @@ const BookForm = ({loadBooks}) => {
     const [message, setMessage] = useState('');
 
     const [categories, setCategories] = useState([])
+    const {appHost, apiPort} = useEnv();
 
     useEffect(() => {
         loadCategories();
@@ -20,7 +22,7 @@ const BookForm = ({loadBooks}) => {
     const loadCategories = () => {
         // make a GET request to the "http://127.0.0.1:8080/api/v1/categories/get_categories"
         // endpoint and set the categories state to the response
-        fetch("http://0.0.0.0:5000/api/v1/categories/get_categories", {
+        fetch(`${appHost}:${apiPort}/api/v1/categories/get_categories`, {
             method: 'GET'
         })
             .then(response => {
@@ -39,7 +41,7 @@ const BookForm = ({loadBooks}) => {
         e.preventDefault();
         // make a POST request to the 127.0.0.1:8080/api/v1/books/insert_book endpoint
         // with the data from the form
-        fetch('http://0.0.0.0:5000/api/v1/books/insert_book', {
+        fetch(`${appHost}:${apiPort}/api/v1/books/insert_book`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

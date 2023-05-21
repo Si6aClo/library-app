@@ -2,17 +2,19 @@ import React, { useState, useEffect } from "react";
 
 import BookForm from "../bookForm/BookForm";
 import ListOfBooks from "../listOfBooks/ListOfBooks";
+import { useEnv } from '../../hooks/env.hook';
 import './MainPage.css';
 
 const MainPage = () => {
     const [books, setBooks] = useState([])
+    const {appHost, apiPort} = useEnv();
     useEffect(() => {
         loadBooks();
     }, [])
 
     const loadBooks = () => {
         // make a GET request to the 127.0.0.1:8080/api/v1/books/get_all_books endpoint
-        fetch('http://0.0.0.0:5000/api/v1/books/get_all_books', {
+        fetch(`${appHost}:${apiPort}/api/v1/books/get_all_books`, {
             method: 'GET'
         })
             .then(response => {

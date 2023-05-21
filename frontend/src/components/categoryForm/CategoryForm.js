@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import './CategoryForm.css';
+import { useEnv } from '../../hooks/env.hook';
 
 const CategoryForm = ({ loadCategories }) => {
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
 
+    const {appHost, apiPort} = useEnv();
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch("http://0.0.0.0:5000/api/v1/categories/insert_category", {
+        fetch(`${appHost}:${apiPort}/api/v1/categories/insert_category`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

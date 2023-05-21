@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  backend:
+    container_name: 'backend_library'
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - OUTLOOK_USER=${OUTLOOK_USER}
+      - OUTLOOK_PASSWORD=${OUTLOOK_PASSWORD}
+      - SEND_TO=${SEND_TO}
+      - APP_HOST=${APP_HOST}
+      - APP_PORT=${APP_PORT}
+    ports:
+      - '${APP_PORT}:${APP_PORT}'
+    volumes:
+      - ./library.db:/library.db
+  
+  frontend:
+    container_name: 'frontend_library'
+    build:
+      context: frontend
+      args:
+        - APP_HOST=${APP_HOST}
+        - API_PORT=${APP_PORT}
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - '3000:3000'

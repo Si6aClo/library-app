@@ -53,14 +53,9 @@ def get_app() -> FastAPI:
     bind_routes(application, settings)
     application.state.settings = settings
 
-    origins = [
-        "http://localhost:3000",
-        "localhost:3000"
-    ]
-
     application.add_middleware(
         CORSMiddleware,
-        allow_origins=origins,
+        allow_origins=["*"],
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"]
