@@ -16,7 +16,7 @@ services:
     ports:
       - '${APP_PORT}:${APP_PORT}'
     volumes:
-      - ./library.db:/library.db
+      - ./library.db:/home/library.db
   
   frontend:
     container_name: 'frontend_library'
@@ -24,7 +24,7 @@ services:
       context: frontend
       args:
         - APP_HOST=${APP_HOST}
-        - API_PORT=${APP_PORT}
+        - API_PORT=:${APP_PORT}
       dockerfile: Dockerfile
     restart: always
     ports:

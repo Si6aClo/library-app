@@ -14,7 +14,7 @@ const MainPage = () => {
 
     const loadBooks = () => {
         // make a GET request to the 127.0.0.1:8080/api/v1/books/get_all_books endpoint
-        fetch(`${appHost}:${apiPort}/api/v1/books/get_all_books`, {
+        fetch(`${appHost}${apiPort}/api/v1/books/get_all_books`, {
             method: 'GET'
         })
             .then(response => {

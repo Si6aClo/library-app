@@ -9,7 +9,7 @@ const ListOfBooks = ({books, loadBooks}) => {
 
     const deleteBook = (id) => {
         // make a DELETE request to the 'http://127.0.0.1:8080/api/v1/books/delete_book/${bookId}' endpoint
-        fetch(`${appHost}:${apiPort}/api/v1/books/delete_book/${id}`, {
+        fetch(`${appHost}${apiPort}/api/v1/books/delete_book/${id}`, {
             method: 'DELETE'
         })
             .then(response => {

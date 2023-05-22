@@ -10,7 +10,7 @@ const ListOfCategories = ({ categories, loadCategories }) => {
 
     const deleteCategory = (id) => {
         // make a DELETE request to the "http://127.0.0.1:8080/api/v1/categories/delete_category/{category_id}" endpoint
-        fetch(`${appHost}:${apiPort}/api/v1/categories/delete_category/${id}`, {
+        fetch(`${appHost}${apiPort}/api/v1/categories/delete_category/${id}`, {
             method: 'DELETE'
         })
             .then(response => {

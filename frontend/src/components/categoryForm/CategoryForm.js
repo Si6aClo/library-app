@@ -10,7 +10,7 @@ const CategoryForm = ({ loadCategories }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`${appHost}:${apiPort}/api/v1/categories/insert_category`, {
+        fetch(`${appHost}${apiPort}/api/v1/categories/insert_category`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
